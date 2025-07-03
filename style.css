@@ -1,3 +1,229 @@
-.GalleryImages {
+/* Out of this world background */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
+    background: #0f2027;
+    background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+    color: #f8f9fa;
+    position: relative;
+}
+
+/* Starfield effect */
+.stars, .twinkling {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 0;
+    pointer-events: none;
+}
+.stars {
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    opacity: 0.5;
+}
+.twinkling {
+    background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') repeat;
+    opacity: 0.2;
+    animation: twinkle 200s linear infinite;
+}
+@keyframes twinkle {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+/* Glassmorphism card effect */
+.glassmorph {
+    background: rgba(34, 34, 64, 0.65);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    z-index: 1;
+}
+
+/* Neon text and links */
+.neon-text {
+    color: #fff;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #ffb347,
+        0 0 20px #ffb347,
+        0 0 40px #ffb347,
+        0 0 80px #ffb347;
+    letter-spacing: 2px;
+}
+.neon-link {
+    color: #fff !important;
+    text-shadow:
+        0 0 2px #fff,
+        0 0 8px #00ffe7,
+        0 0 16px #00ffe7;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+.neon-link:hover, .nav-link.active {
+    color: #ffb347 !important;
+    text-shadow:
+        0 0 2px #fff,
+        0 0 8px #ffb347,
+        0 0 16px #ffb347;
+}
+
+/* Navbar tweaks */
+.navbar {
+    background: rgba(20, 20, 40, 0.85) !important;
+    border-bottom: 2px solid #ffb347;
+    z-index: 2;
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+/* Main content card */
+main .glassmorph {
     max-width: 600px;
+    margin: 3rem auto;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Spacey image style */
+.space-img {
+    border: 4px solid #ffb347;
+    box-shadow: 0 0 32px 4px #00ffe7, 0 0 8px 2px #ffb347;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(255,255,255,0.05);
+}
+
+/* Footer glass effect */
+footer.glassmorph {
+    max-width: 400px;
+    margin: 2rem auto 1rem auto;
+    padding: 1rem 0;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    color: #ffb347;
+    letter-spacing: 2px;
+    background: rgba(34, 34, 64, 0.65);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    main .glassmorph {
+        padding: 1.5rem 0.5rem;
+    }
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
+/* Optional: Animate the main card on load */
+main .glassmorph {
+    animation: floatIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes floatIn {
+    0% { opacity: 0; transform: translateY(60px) scale(0.95);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+/* Make the page fill the viewport and center content vertically */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    color: #f8f9fa;
+}
+
+/* Navbar styles */
+.navbar {
+    background: rgba(34, 34, 34, 0.95) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffb347 !important;
+}
+
+.nav-link {
+    color: #f8f9fa !important;
+    transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active {
+    color: #ffb347 !important;
+}
+
+/* Main content centering */
+main.container {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card-like style for main content */
+main .text-center {
+    background: rgba(40, 40, 40, 0.85);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+/* Main image styling */
+main img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 4px solid #ffb347;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+
+/* Footer styles */
+footer {
+    flex-shrink: 0;
+    color: #bbb;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
+
+/* Form styling for contact page */
+form label {
+    color: #ffb347;
+    font-weight: 500;
+}
+form .form-control {
+    background: #232526;
+    color: #f8f9fa;
+    border: 1px solid #444;
+}
+form .form-control:focus {
+    border-color: #ffb347;
+    box-shadow: 0 0 0 0.2rem rgba(255,179,71,0.15);
+}
+form button.btn-primary {
+    background: #ffb347;
+    border: none;
+    color: #232526;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+form button.btn-primary:hover {
+    background: #ffa500;
+    color: #fff;
 }
